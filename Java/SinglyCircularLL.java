@@ -3,7 +3,6 @@ package Java;
 public class SinglyCircularLL {
     Node head = null;
     Node tail = null;
-    int size = 0;
 
     public void addBeginning(int data) {
         Node newNode = new Node(data);
