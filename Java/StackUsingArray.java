@@ -8,9 +8,9 @@ public class StackUsingArray {
         stack.push(3);
         stack.push(2);
         stack.push(1);
-        System.out.println(stack.peak());
+        System.out.println(stack.peek());
         stack.pop();
-        System.out.println(stack.peak());
+        System.out.println(stack.peek());
         System.out.println("Size : " + stack.getSize());
     }
 }
@@ -51,7 +51,7 @@ class MyStack {
         return res;
     }
 
-    public int peak() {
+    public int peek() {
         return arr[top];
     }
 

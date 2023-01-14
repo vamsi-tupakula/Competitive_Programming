@@ -6,10 +6,10 @@ public class StackUsingLL {
         stack.push(3);
         stack.push(2);
         stack.push(1);
-        System.out.println(stack.peak());
+        System.out.println(stack.peek());
         stack.pop();
         stack.pop();
-        System.out.println(stack.peak());
+        System.out.println(stack.peek());
         stack.pop();
         System.out.println(stack.pop());
     }
@@ -56,7 +56,7 @@ class MyStack {
         return data;
     }
 
-    public int peak() {
+    public int peek() {
         if(isEmpty()) return Integer.MAX_VALUE;
         return head.data;
     }
