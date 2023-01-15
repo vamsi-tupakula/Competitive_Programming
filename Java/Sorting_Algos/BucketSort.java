@@ -10,7 +10,7 @@ public class BucketSort {
     }
 
     private static void bucket_sort(int[] arr) {
-        HashMap<Integer, Integer> buckets = new HashMap<>();
+        TreeMap<Integer, Integer> buckets = new TreeMap<>();
         for(int elem : arr) {
             if(buckets.containsKey(elem)) {
                 buckets.put(elem, buckets.get(elem)+1);
