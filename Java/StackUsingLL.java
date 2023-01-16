@@ -15,18 +15,18 @@ public class StackUsingLL {
     }
 }
 
-class Node {
+class StackNode {
     int data;
-    Node next;
+    StackNode next;
 
-    public Node(int data) {
+    public StackNode(int data) {
         this.data = data;
         this.next = null;
     }
 }
 
 class MyStack {
-    Node head = null;
+    StackNode head = null;
     int size;
     
     MyStack() {
@@ -42,7 +42,7 @@ class MyStack {
     }
 
     public void push(int data) {
-        Node newNode = new Node(data);
+        StackNode newNode = new StackNode(data);
         newNode.next = head;
         head = newNode;
         size++;

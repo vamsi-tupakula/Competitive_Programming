@@ -1,8 +1,8 @@
 package Java;
 
 public class DoublyLinkedList {
-    Node head = null;
-    Node tail = null;
+    DLNode head = null;
+    DLNode tail = null;
     private int size;
 
     DoublyLinkedList() {
@@ -10,7 +10,7 @@ public class DoublyLinkedList {
     }
 
     public void addFirst(int data) {
-        Node newNode = new Node(data);
+        DLNode newNode = new DLNode(data);
         size++;
         if(head == null) {
             head = newNode;
@@ -23,14 +23,14 @@ public class DoublyLinkedList {
     }
 
     public void addLast(int data) {
-        Node newNode = new Node(data);
+        DLNode newNode = new DLNode(data);
         size++;
         if(head == null) {
             head = newNode;
             tail = newNode;
             return;
         }
-        Node curr = head;
+        DLNode curr = head;
         while(curr.next != null) {
             curr = curr.next;
         }
@@ -57,7 +57,7 @@ public class DoublyLinkedList {
             head = null;
             return;
         }
-        Node curr = head;
+        DLNode curr = head;
         while(curr.next.next != null) {
             curr = curr.next;
         }
@@ -67,7 +67,7 @@ public class DoublyLinkedList {
     }
 
     public void printList() {
-        Node current = head;
+        DLNode current = head;
         while(current!= null) {
             System.out.print(current.data + " <-> ");
             current = current.next;
@@ -76,7 +76,7 @@ public class DoublyLinkedList {
     }
 
     public void printListReverse() {
-        Node curr = tail;
+        DLNode curr = tail;
         while(curr != null) {
             System.out.print(curr.data + " <-> ");
             curr = curr.prev;
@@ -103,12 +103,12 @@ public class DoublyLinkedList {
     }
 }
 
-class Node {
+class DLNode {
     int data;
-    Node next;
-    Node prev;
+    DLNode next;
+    DLNode prev;
 
-    Node(int data) {
+    DLNode(int data) {
         this.data = data;
         this.next = null;
         this.prev = null;

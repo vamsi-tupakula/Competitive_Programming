@@ -1,11 +1,11 @@
 package Java;
 
 public class DoublyCircularLL {
-    Node head = null;
-    Node tail = null;
+    DNode head = null;
+    DNode tail = null;
     
     public void addBeginningNode(int data) {
-        Node newNode = new Node(data);
+        DNode newNode = new DNode(data);
         if(head == null) {
             head = newNode;
             tail = newNode;
@@ -21,7 +21,7 @@ public class DoublyCircularLL {
     }
 
     public void addEnd(int data) {
-        Node newNode = new Node(data);
+        DNode newNode = new DNode(data);
         if(head == null) {
             head = newNode;
             tail = newNode;
@@ -61,7 +61,7 @@ public class DoublyCircularLL {
     }
 
     public void printLL() {
-        Node curr = head;
+        DNode curr = head;
         while(curr.next != head) {
             System.out.print(curr.data + " <-> ");
             curr = curr.next;
@@ -88,12 +88,12 @@ public class DoublyCircularLL {
     }
 }
 
-class Node {
+class DNode {
     int data;
-    Node next;
-    Node prev;
+    DNode next;
+    DNode prev;
 
-    public Node(int data) {
+    public DNode(int data) {
         this.data = data;
         this.next = null;
         this.prev = null;

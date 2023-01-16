@@ -1,11 +1,11 @@
 package Java;
 
 public class SinglyCircularLL {
-    Node head = null;
-    Node tail = null;
+    ScNode head = null;
+    ScNode tail = null;
 
     public void addBeginning(int data) {
-        Node newNode = new Node(data);
+        ScNode newNode = new ScNode(data);
         if(head == null) {
             head = newNode;
             tail = newNode;
@@ -18,7 +18,7 @@ public class SinglyCircularLL {
     }
 
     public void addEnd(int data) {
-        Node newNode = new Node(data);
+        ScNode newNode = new ScNode(data);
         if(tail == null) {
             head = newNode;
             tail = newNode;
@@ -48,7 +48,7 @@ public class SinglyCircularLL {
             tail = null;
             return;
         }
-        Node curr = head;
+        ScNode curr = head;
         while(curr.next.next != head) {
             curr = curr.next;
         }
@@ -57,7 +57,7 @@ public class SinglyCircularLL {
     }
 
     public void printLL() {
-        Node curr = head;
+        ScNode curr = head;
         System.out.print("head -> ");
         while(curr.next != head) {
             System.out.print(curr.data + " -> ");
@@ -87,11 +87,11 @@ public class SinglyCircularLL {
     }
 }
 
-class Node {
+class ScNode {
     int data;
-    Node next;
+    ScNode next;
 
-    public Node(int data) {
+    public ScNode(int data) {
         this.data = data;
         this.next = null;
     }

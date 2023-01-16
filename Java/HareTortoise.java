@@ -1,10 +1,10 @@
 package Java;
 
 public class HareTortoise {
-    Node head = null;
-    Node tail = null;
+    HTNode head = null;
+    HTNode tail = null;
     public void addBeginning(int data) {
-        Node newNode = new Node(data);
+        HTNode newNode = new HTNode(data);
         if(head == null) {
             head = newNode;
             tail = newNode;
@@ -14,7 +14,7 @@ public class HareTortoise {
         head = newNode;
     }
     public void makeCycle(int pos) {
-        Node curr = head;
+        HTNode curr = head;
         int i=0;
         while(i<pos-1) {
             curr = curr.next;
@@ -23,8 +23,8 @@ public class HareTortoise {
         tail.next = curr;
     }
     public boolean detectCycle() {
-        Node fast = head;
-        Node slow = head;
+        HTNode fast = head;
+        HTNode slow = head;
         while(slow != null && fast != null && fast.next != null) {
             fast = fast.next.next;
             slow = slow.next;
@@ -37,7 +37,7 @@ public class HareTortoise {
         return false;
     }
     public void printLL() {
-        Node curr = head;
+        HTNode curr = head;
         if(detectCycle()) {
             return;
         }
@@ -59,10 +59,10 @@ public class HareTortoise {
     }
 }
 
-class Node {
+class HTNode {
     int data;
-    Node next;
-    Node(int data) {
+    HTNode next;
+    HTNode(int data) {
         this.data = data;
         this.next = null;
     }
