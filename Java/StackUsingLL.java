@@ -2,7 +2,7 @@ package Java;
 
 public class StackUsingLL {
     public static void main(String[] args) {
-        MyStack stack = new MyStack();
+        MyLLStack stack = new MyLLStack();
         stack.push(3);
         stack.push(2);
         stack.push(1);
@@ -25,11 +25,11 @@ class StackNode {
     }
 }
 
-class MyStack {
+class MyLLStack {
     StackNode head = null;
     int size;
     
-    MyStack() {
+    MyLLStack() {
         this.size = 0;
     }
 
