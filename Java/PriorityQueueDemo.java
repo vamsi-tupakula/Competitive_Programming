@@ -1,10 +1,10 @@
 package Java;
 
-import java.util.PriorityQueue;
+import java.util.*;
 
 public class PriorityQueueDemo {
     public static void main(String[] args) {
-        PriorityQueue<Integer> queue = new PriorityQueue<>();
+        PriorityQueue<Integer> queue = new PriorityQueue<>(new CustomComparator());
         queue.add(33);
         queue.add(35);
         queue.add(1);
@@ -13,5 +13,12 @@ public class PriorityQueueDemo {
         System.out.println(queue.poll()); // poll() = peek() + remove()
         queue.remove();
         System.out.println(queue.peek());
+    }
+}
+
+class CustomComparator implements Comparator<Integer> {
+    @Override
+    public int compare(Integer o1, Integer o2) {
+        return o2 - o1;
     }
 }
