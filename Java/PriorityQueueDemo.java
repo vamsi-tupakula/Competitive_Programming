@@ -4,7 +4,7 @@ import java.util.*;
 
 public class PriorityQueueDemo {
     public static void main(String[] args) {
-        PriorityQueue<Integer> queue = new PriorityQueue<>(new CustomComparator());
+        PriorityQueue<Integer> queue = new PriorityQueue<>(new PQComparator());
         queue.add(33);
         queue.add(35);
         queue.add(1);
@@ -16,7 +16,7 @@ public class PriorityQueueDemo {
     }
 }
 
-class CustomComparator implements Comparator<Integer> {
+class PQComparator implements Comparator<Integer> {
     @Override
     public int compare(Integer o1, Integer o2) {
         return o2 - o1;
