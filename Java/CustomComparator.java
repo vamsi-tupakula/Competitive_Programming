@@ -21,7 +21,17 @@ public class CustomComparator {
         arr.add(one);
         arr.add(two);
         arr.add(three);
-        Collections.sort(arr, new SortByRoll());
+        // Collections.sort(arr, new SortByRoll());
+        
+        Collections.sort(arr, new Comparator<Student>() {
+            @Override
+            public int compare(Student o1, Student o2) {
+                return o1.roll - o2.roll;
+            }
+        });
+
+        arr.sort((Student s1, Student s2) -> {return s1.roll - s2.roll;});
+        
         for(Student s : arr) {
             System.out.println(s.roll + " " + s.name + " " + s.age);
         }
