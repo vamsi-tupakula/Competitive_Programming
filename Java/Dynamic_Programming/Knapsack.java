@@ -17,17 +17,25 @@ public class Knapsack {
         items.add(new Item(20, 39));
         items.add(new Item(15, 29));
 
-        System.out.println(knapsack(60, items, 0));
+        Map<String, Integer> memo = new HashMap<>();
+
+        System.out.println(knapsack(60, items, 0, memo));
     }
 
-    private static int knapsack(int weight_left, ArrayList<Item> items, int itemNo) {
+    private static int knapsack(int weight_left, ArrayList<Item> items, int itemNo, Map<String, Integer> memo) {
         if(itemNo >= items.size() || weight_left == 0) return 0;
-        if(weight_left < items.get(itemNo).weight)
-            return knapsack(weight_left, items, itemNo+1);
+        String key = weight_left + " | " + itemNo;
 
-        int case_1 = items.get(itemNo).value + knapsack(weight_left - items.get(itemNo).weight, items, itemNo+1);
-        int case_2 = knapsack(weight_left, items, itemNo+1);
-        return Math.max(case_1, case_2);
+        if(memo.containsKey(key)) return memo.get(key);
+
+        if(weight_left < items.get(itemNo).weight) {
+            memo.put(key, knapsack(weight_left, items, itemNo+1, memo));
+            return memo.get(key);
+        }
+        int case_1 = items.get(itemNo).value + knapsack(weight_left - items.get(itemNo).weight, items, itemNo+1, memo);
+        int case_2 = knapsack(weight_left, items, itemNo+1, memo);
+        memo.put(key, Math.max(case_1, case_2));
+        return memo.get(key);
     }
 }
 
