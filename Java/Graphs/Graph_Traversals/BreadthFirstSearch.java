@@ -3,11 +3,11 @@ package Java.Graphs.Graph_Traversals;
 import java.util.*;
 
 public class BreadthFirstSearch {
-    private static void breadthFirstSearch(ArrayList<ArrayList<Integer>> adjList, int[][] edges) {
+    private static void breadthFirstSearch(ArrayList<ArrayList<Integer>> adjList) {
         Queue<Integer> queue = new LinkedList<>();
         boolean[] visited = new boolean[adjList.size()];
 
-        queue.add(0);
+        queue.add(0); // start
 
         while (!queue.isEmpty()) {
             if (visited[queue.peek()] == true) {
@@ -63,6 +63,17 @@ public class BreadthFirstSearch {
         System.out.println("Original Adjacency List : ");
         printGraph(adjList);
         System.out.println("Breadth First Search");
-        breadthFirstSearch(adjList, edges);
+        breadthFirstSearch(adjList);
+
+        /**
+         * ! for disconnected graph we run bfs for every vertex like below
+         */
+        /**
+         * boolean[] visited = new boolean[];
+         * for (int i = 0; i < vertex; i++) {
+         *      if (visited[i] == false)
+         *          breadthFirstSearch(adjList, visited, i) // i will be our start
+         * }
+         */
     }
 }
