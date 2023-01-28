@@ -47,7 +47,7 @@ public class TopologicalSorting {
                 { 2, 3 }
         };
 
-        int vertex = edges.length;
+        int vertex = 4;
         ArrayList<ArrayList<Integer>> adjList = new ArrayList<>(vertex);
         createList(edges, adjList, vertex);
         
