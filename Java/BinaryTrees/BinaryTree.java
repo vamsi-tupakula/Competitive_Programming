@@ -15,12 +15,20 @@ public class BinaryTree {
         return root;
     }
     
+    public static void printPreorder(TreeNode root) {
+        if (root == null)
+            return;
+
+        System.out.print(root.data + " ");
+        printPreorder(root.left);
+        printPreorder(root.right);
+    }
+
     public static void main(String[] args) {
         // preorder sequence
         int[] nodes = { 1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1 };
-        TreeNode root = BinaryTree.buildTreePreOrder(nodes);
-        System.out.println(root.data);
-        System.out.println(root.left.data);
-        System.out.println(root.right.data);
+        TreeNode root = buildTreePreOrder(nodes);
+
+        printPreorder(root);
     }
 }
