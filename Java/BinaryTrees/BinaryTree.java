@@ -33,6 +33,15 @@ public class BinaryTree {
         printInorder(root.right);
     }
 
+    public static void printPostorder(TreeNode root) {
+        if (root == null)
+            return;
+
+        printPostorder(root.left);
+        printPostorder(root.right);
+        System.out.print(root.data + " ");
+    }
+
     public static void main(String[] args) {
         // preorder sequence
         int[] nodes = { 1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1 };
@@ -43,5 +52,8 @@ public class BinaryTree {
         System.out.println();
         System.out.println("inorder sequence : ");
         printInorder(root);
+        System.out.println();
+        System.out.println("postorder sequence : ");
+        printPostorder(root);
     }
 }
